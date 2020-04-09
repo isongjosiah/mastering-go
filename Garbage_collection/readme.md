@@ -1,0 +1,1 @@
+it turns out that map slow down the Go garbage collector wheras slice collaborate much better with it, this is not a problem with maps, but a result of the way the Go garbage collector works.
