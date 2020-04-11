@@ -1,0 +1,1 @@
+deferred functions are executed in last in, frst out order after the return of the surrounding function.
