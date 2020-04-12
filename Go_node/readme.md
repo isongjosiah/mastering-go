@@ -1,0 +1,1 @@
+run go tool compiile -W nodeTree.go to see some internal Go Workings
