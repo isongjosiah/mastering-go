@@ -1,0 +1,3 @@
+The order in which you put the fields in the definition of a structre type is significant for the type identity of the defined structure. Put simply, two structres with the same fields will not be considered identical in Go if their fields are not in exactly the same order
+
+Go supports the new keyword, which allows you to allcoate new objects. However, it returns the memory address of the allocated object (a pointer), Make can only be applied to maps, channels, and slices and does not return a memory address.
