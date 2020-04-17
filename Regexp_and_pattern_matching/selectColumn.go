@@ -54,6 +54,5 @@ func main() {
 			}
 		}
 	}
-	fmt.Println("This occurs after the for loop")
 
 }
