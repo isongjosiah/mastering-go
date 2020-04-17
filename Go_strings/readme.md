@@ -1,0 +1,1 @@
+A rune is an int32 value, and therefor a Go type, that is used for representinf a Unicode code point. A unicode code point, or code position is a numerical value that is usually used for representing single Unicode characters; however, it can also have alternative meanings, such as providing formatting information. A string can be considered as a collection of runes.
