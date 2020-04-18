@@ -44,9 +44,10 @@ func LOOKUP(k string) *myElement {
 	if ok {
 		n := DATA[k]
 		return &n
-	} else {
-		return nil
 	}
+
+	return nil
+
 }
 
 // CHANGE ...
@@ -58,7 +59,7 @@ func CHANGE(k string, n myElement) bool {
 // PRINT ...
 func PRINT() {
 	for k, d := range DATA {
-		fmt.Printf("Key: %s value: $v\n", k, d)
+		fmt.Printf("Key: %s value: %v\n", k, d)
 	}
 }
 
