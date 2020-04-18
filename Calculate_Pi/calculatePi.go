@@ -10,6 +10,7 @@ import (
 
 var precision uint = 0
 
+// Pi ...
 func Pi(accuracy uint) *big.Float {
 	k := 0
 	pi := new(big.Float).SetPrec(precision).SetFloat64(0)
