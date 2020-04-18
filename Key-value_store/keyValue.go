@@ -22,7 +22,7 @@ func ADD(k string, n myElement) bool {
 		return false
 	}
 
-	if LOOKUP(K) == nil {
+	if LOOKUP(k) == nil {
 		DATA[k] = n
 		return true
 	}
