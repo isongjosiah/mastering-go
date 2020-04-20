@@ -47,7 +47,7 @@ func main() {
 	err := loadFromJSON(filename, &myRecord)
 	fmt.Println("Loaded from json")
 
-	if err != nil {
+	if err == nil {
 		fmt.Println(myRecord)
 	} else {
 		fmt.Println(err)
