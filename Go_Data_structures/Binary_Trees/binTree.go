@@ -24,11 +24,14 @@ func traverse(t *Tree) {
 
 func create(n int) *Tree {
 	var t *Tree
+	var random []int
 	rand.Seed(time.Now().Unix())
 	for i := 0; i < 2*n; i++ {
 		temp := rand.Intn(n * 2)
+		random = append(random, temp)
 		t = insert(t, temp)
 	}
+	fmt.Println(random)
 	return t
 }
 
