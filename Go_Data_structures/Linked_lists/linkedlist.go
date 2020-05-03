@@ -82,7 +82,16 @@ func delete(t *Node, v int) bool {
 		fmt.Println("-> Empty list!")
 		return false
 	}
+	if t.Next.Value == v {
+		if t.Next.Next == nil {
+			t.Next = nil
+		}
+	}
 	if v == t.Value {
+		if t.Next == nil {
+			t.Value = 0
+			return true
+		}
 		t.Value = t.Next.Value
 		t.Next = t.Next.Next
 		return true
@@ -106,10 +115,10 @@ func main() {
 	addNode(root, 100)
 	traverse(root)
 	fmt.Println("Delete")
-	delete(root, 100)
+	delete(root, 5)
 	traverse(root)
 
-	if lookupNode(root, 100) {
+	if lookupNode(root, 45) {
 		fmt.Println("Node exists!")
 
 	} else {
