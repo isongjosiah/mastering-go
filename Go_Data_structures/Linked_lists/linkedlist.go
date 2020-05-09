@@ -82,11 +82,15 @@ func delete(t *Node, v int) bool {
 		fmt.Println("-> Empty list!")
 		return false
 	}
+
+	//  code for removing only the last node
 	if t.Next.Value == v {
 		if t.Next.Next == nil {
 			t.Next = nil
 		}
 	}
+
+	//  code for removing nodes inbetween
 	if v == t.Value {
 		if t.Next == nil {
 			t.Value = 0
