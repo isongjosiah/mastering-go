@@ -14,7 +14,7 @@ func random(min, max int) int {
 }
 
 func multiplyMatrices(m1 [][]int, m2 [][]int) ([][]int, error) {
-	if len(m1[0] != len(m2)) {
+	if len(m1[0]) != len(m2) {
 		return nil, errors.New("Cannot multiply the given matrices, column and row mismatch")
 	}
 
@@ -82,7 +82,7 @@ func main() {
 
 	col, err = strconv.Atoi(arguments[4])
 	if err != nil {
-		fmt.Pringln("Need aninteger: ", arguments[4])
+		fmt.Println("Need aninteger: ", arguments[4])
 		return
 	}
 
@@ -100,7 +100,7 @@ func main() {
 	// Multiply
 	r1, err := multiplyMatrices(m1, m2)
 	if err != nil {
-		fmt.Pritnln(err)
+		fmt.Println(err)
 		return
 	}
 	fmt.Println("r1:", r1)
