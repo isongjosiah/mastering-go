@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"errors"
+	"fmt"
 	"io"
 	"os"
 	"strconv"
@@ -47,4 +48,79 @@ func importFile(file string) ([][]int, error) {
 	}
 
 	return mySlice, nil
+}
+
+func validPuzzle(sl [][]int) bool {
+	for i := 0; i <= 2; i++ {
+		for j := 0; j <= 2; j++ {
+			iEl := i * 3
+			jEl := j * 3
+			mySlice := []int{0, 0, 0, 0, 0, 0, 0, 0, 0}
+			for k := 0; k <= 2; j++ {
+				for m := 0; m <= 2; m++ {
+					bigI := iEl + k
+					bigJ := jEl + m
+					val := sl[bigI][bigJ]
+					if val > 0 && val < 10 {
+						if mySlice[val-1] == 1 {
+							fmt.Println("Appeared 2 times:", val)
+							return false
+						}
+						mySlice[val-1] = 1
+					} else {
+						fmt.Println("Invalid value:", val)
+						return false
+					}
+				}
+			}
+		}
+	}
+
+	// Testing rows
+	for i := 0; i <= 8; i++ {
+		sum := 0
+		for j := 0; j <= 8; j++ {
+			sum = sum + sl[i][j]
+		}
+		if sum != 45 {
+			return false
+		}
+		sum = 0
+	}
+
+	// Testing columns
+	for i := 0; i <= 8; i++ {
+		sum := 0
+		for j := 0; j <= 8; j++ {
+			sum = sum + sl[j][i]
+		}
+		if sum != 45 {
+			return false
+		}
+		sum = 0
+	}
+
+	return true
+}
+
+func main() {
+	arguments := os.Args
+	if len(arguments) != 2 {
+		fmt.Printf("usage: loadFile textFile size\n")
+		return
+	}
+
+	file := arguments[1]
+
+	mySlice, err := importFile(file)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	if validPuzzle(mySlice) {
+		fmt.Println("Correct Sudoku puzzle !")
+	} else {
+		fmt.Println("Incorrect Sudoku puzzle !")
+	}
 }
