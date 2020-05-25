@@ -1,1 +1,0 @@
-Revist this section after doing an introduction to c course
