@@ -21,7 +21,7 @@ func makeVisitor(f *ast.File) visitor {
 	k1 := make(map[*ast.GenDecl]bool)
 	for _, aa := range f.Decls {
 		v, ok := aa.(*ast.GenDecl)
-		print(aa.(*ast.GenDecl))
+		// print(aa.(*ast.GenDecl))
 		if ok {
 			k1[v] = true
 		}
