@@ -6,8 +6,7 @@ import (
 	"html/template"
 	"net/http"
 	"os"
-
-	_ "github.com/mattn/go_sqlite3"
+	// _ "github.com/mattn/go_sqlite3"
 )
 
 // Entry ...
@@ -43,7 +42,7 @@ func main() {
 	}
 
 	fmt.Println("Emptying database table.")
-	_, err := db.Exec("DELETE FROM data")
+	_, err = db.Exec("DELETE FROM data")
 	if err != nil {
 		fmt.Println(nil)
 		return

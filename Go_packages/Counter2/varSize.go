@@ -14,14 +14,13 @@ var global = 0
 var local = 0
 
 type visitor struct {
-	Package map[*ast.GenDeclgo]bool
+	Package map[*ast.GenDecl]bool
 }
 
 func makeVisitor(f *ast.File) visitor {
 	k1 := make(map[*ast.GenDecl]bool)
 	for _, aa := range f.Decls {
 		v, ok := aa.(*ast.GenDecl)
-		// print(aa.(*ast.GenDecl))
 		if ok {
 			k1[v] = true
 		}
