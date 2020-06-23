@@ -2,6 +2,8 @@ package main
 
 import (
 	"bufio"
+	"flag"
+	"fmt"
 	"io"
 	"os"
 	"regexp"
@@ -21,7 +23,7 @@ func wordByword(filename string) error {
 		if err == io.EOF {
 			break
 		} else if err != nil {
-			fmt.Printf("error reading file %s" err)
+			fmt.Printf("error reading file %s", err)
 			return err
 		}
 		r := regexp.MustCompile("[^\\s]+")
@@ -37,7 +39,7 @@ func main() {
 	flag.Parse()
 	if len(flag.Args()) == 0 {
 		fmt.Printf("usage: byword <file1> [<file2> ...]\n")
-		return 
+		return
 	}
 
 	for _, file := range flag.Args() {

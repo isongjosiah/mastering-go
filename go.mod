@@ -3,6 +3,7 @@ module github.com/isongjosiah/mastering_go
 go 1.13
 
 require (
+	github.com/Arafatk/glot v0.0.0-20180312013246-79d5219000f0 // indirect
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/mitchellh/mapstructure v1.3.2 // indirect
 	github.com/mitchellh/reflectwalk v1.0.1
